@@ -1,0 +1,9 @@
+python-dotenv
+openai
+huggingface_hub
+transformers
+psycopg[binary]
+streamlit
+pandas
+sqlalchemy
+torch
