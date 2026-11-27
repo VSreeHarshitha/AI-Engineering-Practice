@@ -1,4 +1,4 @@
-from google import genai
+"""from google import genai
 from dotenv import load_dotenv
 import os
 
@@ -32,3 +32,22 @@ while True:
         "role": "model",
         "parts": [{"text": response.text}]
     })
+    print(response.response_id)"""
+from google import genai
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = genai.Client()
+
+chat = client.chats.create(model="gemini-3.5S-flash")
+
+while True:
+    user_input = input("Ask your question: ")
+
+    if user_input.lower() == "exit":
+        break
+
+    response = chat.send_message(user_input)
+
+    print(response.text)
